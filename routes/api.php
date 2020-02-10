@@ -11,3 +11,8 @@ Route::resource('posts', 'PostsController');
 // Route::get('posts', 'PostsController@index');
 Route::post('posts/{id}', 'PostsController@update');
 Route::get('posts/delete/{id}', 'PostsController@delete');
+
+Route::post('register', 'RegisterController@register');
+Route::post('login', 'LoginController@index');
+
+Route::middleware('auth:api')->post('logout', 'LoginController@logout');
